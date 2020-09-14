@@ -1,24 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Paper Doll View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PaperDollViewController" customModule="PaperDoll" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="body2" translatesAutoresizingMaskIntoConstraints="NO" id="Rlu-re-g1W">
+                                <rect key="frame" x="80" y="300" width="254" height="252"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head2" translatesAutoresizingMaskIntoConstraints="NO" id="C1a-zA-WsD">
+                                <rect key="frame" x="102" y="118" width="232" height="224"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face1" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-76-95E">
+                                <rect key="frame" x="178" y="192" width="128" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-Aw-JvX">
+                                <rect key="frame" x="10" y="620" width="394" height="202"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="kk8-ca-e0o">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="髮型" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAR-Ja-z67">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-su-AhA">
+                                                <rect key="frame" x="65" y="0.0" width="329" height="32"/>
+                                                <segments>
+                                                    <segment title="光頭"/>
+                                                    <segment title="髮型1"/>
+                                                    <segment title="髮型2"/>
+                                                    <segment title="髮型3"/>
+                                                    <segment title="髮型4"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="choiceSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="7uO-TV-BWn"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="3sW-mv-EnX">
+                                        <rect key="frame" x="0.0" y="57" width="394" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="表情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFr-NS-41B">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="K7R-n9-XhZ">
+                                                <rect key="frame" x="65" y="0.0" width="329" height="32"/>
+                                                <segments>
+                                                    <segment title="沒表情"/>
+                                                    <segment title="表情1"/>
+                                                    <segment title="表情2"/>
+                                                    <segment title="表情3"/>
+                                                    <segment title="表情4"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="choiceSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="1BM-nS-lnH"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zWV-qp-NTQ">
+                                        <rect key="frame" x="0.0" y="114" width="394" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="眼鏡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15B-Zg-oqr">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="3" translatesAutoresizingMaskIntoConstraints="NO" id="c7A-7W-LkV">
+                                                <rect key="frame" x="65" y="0.0" width="329" height="32"/>
+                                                <segments>
+                                                    <segment title="沒眼鏡"/>
+                                                    <segment title="眼鏡1"/>
+                                                    <segment title="眼鏡2"/>
+                                                    <segment title="眼鏡3"/>
+                                                    <segment title="眼鏡4"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="choiceSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="z94-8e-eb4"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rKU-uX-w46">
+                                        <rect key="frame" x="0.0" y="171" width="394" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服裝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lF-fe-IJi">
+                                                <rect key="frame" x="0.0" y="0.0" width="35" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rlt-Y9-1Gi">
+                                                <rect key="frame" x="65" y="0.0" width="329" height="32"/>
+                                                <segments>
+                                                    <segment title="衣服1"/>
+                                                    <segment title="衣服2"/>
+                                                    <segment title="衣服3"/>
+                                                    <segment title="衣服4"/>
+                                                    <segment title="衣服5"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="choiceSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="zIy-3S-KJG"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Glasses3" translatesAutoresizingMaskIntoConstraints="NO" id="vdN-NR-f27">
+                                <rect key="frame" x="142" y="184" width="152" height="121"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cbM-Aw-JvX" secondAttribute="bottom" constant="40" id="LMG-CI-pZs"/>
+                            <constraint firstItem="cbM-Aw-JvX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="hs3-tS-zXu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cbM-Aw-JvX" secondAttribute="trailing" constant="10" id="q6r-0Y-Vbl"/>
+                            <constraint firstItem="cbM-Aw-JvX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zb1-5W-Ghe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bodyImageView" destination="Rlu-re-g1W" id="Hjq-TW-67k"/>
+                        <outlet property="faceImageView" destination="vn5-76-95E" id="U5y-SZ-lpq"/>
+                        <outlet property="glassesImageview" destination="vdN-NR-f27" id="r1W-CE-EB3"/>
+                        <outlet property="headImageView" destination="C1a-zA-WsD" id="zjz-m3-8bB"/>
+                        <outletCollection property="choiceSegments" destination="fQX-su-AhA" collectionClass="NSMutableArray" id="2oa-3Y-QjZ"/>
+                        <outletCollection property="choiceSegments" destination="K7R-n9-XhZ" collectionClass="NSMutableArray" id="N7f-sx-VVr"/>
+                        <outletCollection property="choiceSegments" destination="c7A-7W-LkV" collectionClass="NSMutableArray" id="yaN-6v-mBD"/>
+                        <outletCollection property="choiceSegments" destination="Rlt-Y9-1Gi" collectionClass="NSMutableArray" id="RB3-DS-Xjt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-201.44927536231884" y="123.88392857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Glasses3" width="392" height="138"/>
+        <image name="body2" width="818" height="733"/>
+        <image name="face1" width="289" height="293"/>
+        <image name="head2" width="473" height="567"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
